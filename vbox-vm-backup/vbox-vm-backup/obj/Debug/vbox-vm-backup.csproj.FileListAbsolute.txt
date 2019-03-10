@@ -3,3 +3,4 @@ C:\Users\u1035\Desktop\Dev\vbox-vm-backup\vbox-vm-backup\bin\Debug\vbox-vm-backu
 C:\Users\u1035\Desktop\Dev\vbox-vm-backup\vbox-vm-backup\bin\Debug\vbox-vm-backup.pdb
 C:\Users\u1035\Desktop\Dev\vbox-vm-backup\vbox-vm-backup\obj\Debug\vbox-vm-backup.exe
 C:\Users\u1035\Desktop\Dev\vbox-vm-backup\vbox-vm-backup\obj\Debug\vbox-vm-backup.pdb
+C:\Users\u1035\Desktop\Dev\vbox-vm-backup\vbox-vm-backup\obj\Debug\vbox-vm-backup.csprojResolveAssemblyReference.cache

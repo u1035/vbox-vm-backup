@@ -20,12 +20,12 @@ namespace vbox_vm_backup
             logger.Log("======================================================================", false);
             logger.Log("-----------------------Backup sequence started------------------------", false, ConsoleColor.Green );
             logger.Log("======================================================================", false);
-
+            
             LoadConfig();
 
             foreach (VMInfo vm in Targets)
             {
-                CopyVM(vm.SourcePath, vm.DestPath, vm.VMName, vm.VBoxInstallPath);
+                CopyVM(vm);
 #if (!DEBUG)
                 System.Threading.Thread.Sleep(vm.WaitVMToStart);
 #endif
@@ -81,16 +81,16 @@ namespace vbox_vm_backup
         /// <param name="dest">Copy VM files to this folder</param>
         /// <param name="VMName">VM name in VirtualBox</param>
         /// <param name="VBoxPath">Path to VirtualBox executables</param>
-        private static void CopyVM(string source, string dest, string VMName, string VBoxPath)
+        private static void CopyVM(VMInfo VM)
         {
-            StopVM(VMName, VBoxPath);      
-            WaitForShutdown(VMName);
+            StopVM(VM.VMName, VM.VBoxInstallPath);      
+            WaitForShutdown(VM.VMName);
 
 #if (!DEBUG)  
-            DirectoryCopy(source + VMName, dest + VMName + " " + DateTime.Now.ToString("dd.MM.yyyy-hh.mm.ss"));
+            DirectoryCopy(VM.SourcePath + VM.VMName, VM.DestPath + VM.VMName + " " + DateTime.Now.ToString("dd.MM.yyyy-HH.mm.ss"));
 #endif
 
-            StartVM(VMName, VBoxPath);            
+            StartVM(VM.VMName, VM.VBoxInstallPath);
         }
 
         /// <summary>
