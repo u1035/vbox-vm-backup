@@ -87,7 +87,7 @@ namespace vbox_vm_backup
             WaitForShutdown(VM.VMName);
 
 #if (!DEBUG)  
-            DirectoryCopy(VM.SourcePath + VM.VMName, VM.DestPath + VM.VMName + " " + DateTime.Now.ToString("dd.MM.yyyy-HH.mm.ss"));
+            DirectoryCopy(VM.SourcePath, VM.DestPath + VM.VMName + " " + DateTime.Now.ToString("dd.MM.yyyy-HH.mm.ss"));
 #endif
 
             StartVM(VM.VMName, VM.VBoxInstallPath);

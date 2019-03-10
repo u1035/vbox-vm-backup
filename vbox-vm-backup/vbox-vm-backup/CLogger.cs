@@ -16,7 +16,7 @@ namespace vbox_vm_backup
             }
             catch (System.Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException.Message);
             }
 
         }
