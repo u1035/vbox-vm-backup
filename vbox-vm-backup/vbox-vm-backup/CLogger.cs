@@ -3,7 +3,7 @@ using System.IO;
 
 namespace vbox_vm_backup
 {
-    class CLogger
+    class CLogger : IDisposable
     {
 
         private StreamWriter logfile;
@@ -19,20 +19,6 @@ namespace vbox_vm_backup
                 Console.WriteLine(ex.InnerException.Message);
             }
 
-        }
-
-        ~CLogger()
-        {
-            try
-            {
-                logfile.Flush();
-                logfile.Close();
-            }
-            catch (System.Exception ex)
-            {
-                //if we are here - logfile is probably alerady closed
-                //Console.WriteLine(ex.Message);
-            }
         }
 
         /// <summary>
@@ -57,5 +43,37 @@ namespace vbox_vm_backup
             }
             logfile.Flush();
         }
+        
+        #region IDisposable implementation
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private bool m_Disposed = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!m_Disposed)
+            {
+                if (disposing)
+                {
+                    logfile.Dispose();
+                }
+
+                // Unmanaged resources are released here.
+
+                m_Disposed = true;
+            }
+        }
+
+        ~CLogger()
+        {
+            Dispose(false);
+        }
+
+        #endregion
     }
 }
