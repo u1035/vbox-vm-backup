@@ -4,8 +4,7 @@ Command line utility to make backups of Oracle VirtualBox virtual machines
 
 Current version - 0.1-alpha, [can be dowloaded here.](https://github.com/u1035/vbox-vm-backup/releases/tag/0.1-alpha)
 
-It sends shutdown signal to VM, waits for it's shutdown, copies all VM files to specified folder and then starts VM back. 
-To decrease downtime and disk load, utility processes VMs one by one. 
+It sends shutdown signal to VM, waits for it's correct shutdown, copies all VM files to specified folder and then starts VM back. Then waits some time for VM starts, and proceeding to the next VM, to decrease downtime and disk load.
 
 This utility is designed to be started manually or by Windows Task Scheduler (you should make a task manually), makes a log file of it's work (**vbox-vm-backup.log** in program folder) and uses XML config file (**settings.xml** in program folder).
 
