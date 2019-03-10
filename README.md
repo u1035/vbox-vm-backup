@@ -15,7 +15,7 @@ Example settings.xml included in release package and rather intuitive:
 <ArrayOfVMInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <VMInfo>
     <VMName>XMPPServer</VMName>
-    <SourcePath>C:\Users\user\Desktop\VMs\</SourcePath>
+    <SourcePath>C:\Users\user\Desktop\VMs\XMPPServer\</SourcePath>
     <DestPath>D:\</DestPath>
     <NumberOfCopies>7</NumberOfCopies>
     <WaitVMToStart>90000</WaitVMToStart>
@@ -23,7 +23,7 @@ Example settings.xml included in release package and rather intuitive:
   </VMInfo>
   <VMInfo>
     <VMName>WebServer</VMName>
-    <SourcePath>C:\Users\user\Desktop\VMs\</SourcePath>
+    <SourcePath>C:\Users\user\Desktop\VMs\WebServer\</SourcePath>
     <DestPath>D:\</DestPath>
     <NumberOfCopies>7</NumberOfCopies>
     <WaitVMToStart>90000</WaitVMToStart>
