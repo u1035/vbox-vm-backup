@@ -49,7 +49,7 @@ namespace vbox_vm_backup
 
 #if (!DEBUG)
             Process p = new Process();
-            p.StartInfo.FileName= VBoxPath + "VBoxManage.exe";
+            p.StartInfo.FileName= Path.Combine(VBoxPath, "VBoxManage.exe");
             p.StartInfo.Arguments = "controlvm " + VMName + " acpipowerbutton";
             p.Start();
 #endif
@@ -66,7 +66,7 @@ namespace vbox_vm_backup
 
 #if (!DEBUG)
             Process p = new Process();
-            p.StartInfo.FileName = VBoxPath + "VirtualBoxVM.exe";
+            p.StartInfo.FileName = Path.Combine(VBoxPath, "VirtualBoxVM.exe");
             p.StartInfo.Arguments = "--startvm " + VMName;
             p.Start();
 #endif
@@ -87,7 +87,7 @@ namespace vbox_vm_backup
             WaitForShutdown(VM.VMName);
 
 #if (!DEBUG)  
-            DirectoryCopy(VM.SourcePath, VM.DestPath + VM.VMName + " " + DateTime.Now.ToString("dd.MM.yyyy-HH.mm.ss"));
+            DirectoryCopy(VM.SourcePath, Path.Combine(VM.DestPath, VM.VMName + " " + DateTime.Now.ToString("dd.MM.yyyy-HH.mm.ss")));
 #endif
 
             StartVM(VM.VMName, VM.VBoxInstallPath);
@@ -105,9 +105,8 @@ namespace vbox_vm_backup
 
             if (!dir.Exists)
             {
-                throw new DirectoryNotFoundException(
-                    "Source directory does not exist or could not be found: "
-                    + sourceDirName);
+                logger.Log("Source directory does not exist or could not be found: " + sourceDirName,true, ConsoleColor.Red);
+                return;
             }
 
             DirectoryInfo[] dirs = dir.GetDirectories();
@@ -123,7 +122,7 @@ namespace vbox_vm_backup
             foreach (FileInfo file in files)
             {
                 string temppath = Path.Combine(destDirName, file.Name);
-                file.CopyTo(temppath, false);
+                file.CopyTo(temppath, true);
                 logger.Log("File " + file.Name + " copied");
             }
 
