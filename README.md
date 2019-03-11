@@ -2,7 +2,7 @@
 
 Command line utility to make backups of Oracle VirtualBox virtual machines
 
-Current version - 0.1-alpha, [can be dowloaded here.](https://github.com/u1035/vbox-vm-backup/releases/tag/0.1-alpha) Be careful - may contain bugs)
+Current version - 0.1.1-alpha, [can be dowloaded here.](https://github.com/u1035/vbox-vm-backup/releases/tag/0.1.1-alpha) Be careful - may contain bugs)
 
 It sends shutdown signal to VM, waits for it's correct shutdown, copies all VM files to specified folder and then starts VM back. Then waits some time for VM starts, and proceeding to the next VM, to decrease downtime and disk load.
 
@@ -39,3 +39,5 @@ So program copies files from `C:\Users\user\Desktop\VMs\XMPPServer` to `D:\XMPPS
 Waits for 90 seconds (**WaitVMToStart**), allowing first VM to start.
 
 Then goes for next VM - `C:\Users\user\Desktop\VMs\WebServer` to `D:\WebServer_Date-Time`
+
+If there are more copies of this VM, then **NumberOfCopies**, oldest copies are deleted.
