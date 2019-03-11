@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace vbox_vm_backup
 {
@@ -91,6 +92,8 @@ namespace vbox_vm_backup
 #endif
 
             StartVM(VM.VMName, VM.VBoxInstallPath);
+
+            RemoveOldCopies(VM);
         }
 
         /// <summary>
@@ -194,6 +197,61 @@ namespace vbox_vm_backup
             {
                 logger.Log("No VMs to backup of something wrong with settings.xml. Exiting.");
                 Environment.Exit(1);
+            }
+        }
+
+        private static void RemoveOldCopies(VMInfo VM)
+        {
+            DirectoryInfo dir = new DirectoryInfo(VM.DestPath);
+            DirectoryInfo[] dirs = dir.GetDirectories(VM.VMName + "*", SearchOption.TopDirectoryOnly);          //Get list of VM folders
+
+            SortedDictionary<DateTime, DirectoryInfo> dic = new SortedDictionary<DateTime, DirectoryInfo>();
+            System.Globalization.CultureInfo provider = System.Globalization.CultureInfo.InvariantCulture;
+
+            //Add folders to list, sorted by date
+            foreach (DirectoryInfo tmp in dirs)
+            {
+                DateTime dt = new DateTime();
+                bool correct = DateTime.TryParseExact(tmp.Name.Substring(tmp.Name.Length - 19), "dd.MM.yyyy-HH.mm.ss", provider, System.Globalization.DateTimeStyles.None, out dt);
+                if (correct)        //If folder name differs of our mask (or just contains VM name in it's name) - ignoring it
+                {
+                    dic.Add(dt, tmp);
+                }
+                else
+                {
+                    logger.Log("Folder " + tmp.FullName + " does not looks like my backup, ignoring it" );
+                }
+
+            }
+
+            if (dic.Count() <= VM.NumberOfCopies)
+            {
+                logger.Log("There are " + dic.Count + " copies of this VM (must store " + VM.NumberOfCopies + "), so nothing to delete.");
+                return;
+            }
+
+            while (dic.Count() > VM.NumberOfCopies)             //Deleting the oldest folder(s)
+            {
+                KeyValuePair<DateTime, DirectoryInfo> toDelete = dic.First();
+
+                if (toDelete.Value.Exists)
+                {
+                    try
+                    {
+                        logger.Log("Deleting old copy " + toDelete.Value.FullName);
+                        toDelete.Value.Delete(true);
+                    }
+                    catch(Exception ex)
+                    {
+
+                        logger.Log("Error deleting old copy - " + toDelete.Value.FullName,true, ConsoleColor.Red);
+                        logger.Log("Error info: " + ex.Message );
+                    }
+                    finally
+                    {
+                        dic.Remove(toDelete.Key);           //If we can't delete it (maybe it's read-only) - ingore it
+                    }
+                }
             }
         }
 
