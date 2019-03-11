@@ -2,6 +2,8 @@
 
 Command line utility to make backups of Oracle VirtualBox virtual machines
 
+![Program screenshot](screenshot.png)
+
 ## Requirements
 Windows, .NET Framework 4.5
 
