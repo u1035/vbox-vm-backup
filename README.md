@@ -2,11 +2,25 @@
 
 Command line utility to make backups of Oracle VirtualBox virtual machines
 
+## Requirements
+Windows, .NET Framework 4.5
+
+## Download
+
 Current version - 0.1.1-alpha, [can be dowloaded here.](https://github.com/u1035/vbox-vm-backup/releases/tag/0.1.1-alpha) Be careful - may contain bugs)
 
-It sends shutdown signal to VM, waits for it's correct shutdown, copies all VM files to specified folder and then starts VM back. Then waits some time for VM starts, and proceeding to the next VM, to decrease downtime and disk load.
+## How it works
+
+It sends shutdown signal to VM (emulating pressing ACPI power button), waits for it's correct shutdown, copies all VM files to specified folder and then starts VM back. Then waits some time for VM starts, and proceeding to the next VM.
+Program processes virtual machines sequentally, one by one, to decrease overall downtime and disk load.
 
 This utility is designed to be started manually or by Windows Task Scheduler (you should make a task manually), makes a log file of it's work (**vbox-vm-backup.log** in program folder) and uses XML config file (**settings.xml** in program folder).
+
+## Installation
+
+Just copy **vbox-vm-backup.exe** and your **settings.xml** to any folder on your disk and add a task to run executable in Windows Task Manager.
+
+## Settings
 
 Example settings.xml included in release package and rather intuitive:
 
@@ -41,3 +55,5 @@ Waits for 90 seconds (**WaitVMToStart**), allowing first VM to start.
 Then goes for next VM - `C:\Users\user\Desktop\VMs\WebServer` to `D:\WebServer_Date-Time`
 
 If there are more copies of this VM, then **NumberOfCopies**, oldest copies are deleted.
+
+**VBoxInstallPath** is a path to VirtualBox executables (VBoxManage.exe and VirtualBoxVM.exe).
