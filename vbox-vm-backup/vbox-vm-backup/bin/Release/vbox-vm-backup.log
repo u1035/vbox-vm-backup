@@ -1,43 +1,110 @@
 ======================================================================
 -----------------------Backup sequence started------------------------
 ======================================================================
-11.03.2019 12:05:22 Stopping VM XMPPServer...
-11.03.2019 12:05:32 VM XMPPServer stopped.
-11.03.2019 12:05:32 Directory D:\XMPPServer 11.03.2019-12.05.32 created
-11.03.2019 12:05:32 File XMPPServer.vbox copied
-11.03.2019 12:05:32 File XMPPServer.vbox-prev copied
-11.03.2019 12:06:38 File XMPPServer.vdi copied
-11.03.2019 12:06:38 Directory D:\XMPPServer 11.03.2019-12.05.32\Logs created
-11.03.2019 12:06:38 File VBox.log copied
-11.03.2019 12:06:38 File VBox.log.1 copied
-11.03.2019 12:06:39 File VBox.log.2 copied
-11.03.2019 12:06:39 File VBox.log.3 copied
-11.03.2019 12:06:39 File VBoxHardening.log copied
-11.03.2019 12:06:39 Directory D:\XMPPServer 11.03.2019-12.05.32\SharedFolder created
-11.03.2019 12:06:39 Starting VM XMPPServer...
-11.03.2019 12:06:39 VM XMPPServer started.
-11.03.2019 12:06:39 Folder D:\XMPPServer 12.05.2019- 06.36.59 does not looks like my backup, ignoring it
-11.03.2019 12:06:39 Folder D:\XMPPServer 12.05.2019-06.36.99 does not looks like my backup, ignoring it
-11.03.2019 12:06:39 Folder D:\XMPPServer 12.05.2019-06.36.rr does not looks like my backup, ignoring it
-11.03.2019 12:06:39 Deleting old copy D:\XMPPServer 12.05.2011-06.36.50
-11.03.2019 12:06:39 Error deleting old copy - D:\XMPPServer 12.05.2011-06.36.50
-11.03.2019 12:06:39 Error info: Отказано в доступе по пути "Новый текстовый документ.txt".
-11.03.2019 12:06:39 Deleting old copy D:\XMPPServer 12.05.2011-06.36.59
-11.03.2019 12:06:39 Deleting old copy D:\XMPPServer 03.03.2019-06.36.04
+18.03.2019 9:22:51 Stopping VM XMPPServer...
+18.03.2019 9:23:02 VM XMPPServer stopped.
+18.03.2019 9:23:02 Directory D:\XMPPServer 18.03.2019-09.23.02 created
+18.03.2019 9:23:02 File XMPPServer.vbox copied
+18.03.2019 9:23:02 File XMPPServer.vbox-prev copied
+18.03.2019 9:24:22 File XMPPServer.vdi copied
+18.03.2019 9:24:22 Directory D:\XMPPServer 18.03.2019-09.23.02\Logs created
+18.03.2019 9:24:22 File VBox.log copied
+18.03.2019 9:24:22 File VBox.log.1 copied
+18.03.2019 9:24:22 File VBox.log.2 copied
+18.03.2019 9:24:22 File VBox.log.3 copied
+18.03.2019 9:24:22 File VBoxHardening.log copied
+18.03.2019 9:24:22 Directory D:\XMPPServer 18.03.2019-09.23.02\SharedFolder created
+18.03.2019 9:24:22 Starting VM XMPPServer...
+18.03.2019 9:24:22 VM XMPPServer started.
+18.03.2019 9:24:22 Deleting old copy D:\XMPPServer 04.03.2019-06.36.06
 ----------------------------------------------------------------------
-11.03.2019 12:08:09 Stopping VM WebServer...
-11.03.2019 12:08:19 VM WebServer stopped.
-11.03.2019 12:08:19 Directory D:\WebServer 11.03.2019-12.08.19 created
-11.03.2019 12:08:19 File XMPPServer.vbox copied
-11.03.2019 12:08:19 File XMPPServer.vbox-prev copied
-11.03.2019 12:09:39 File XMPPServer.vdi copied
-11.03.2019 12:09:39 Directory D:\WebServer 11.03.2019-12.08.19\Logs created
-11.03.2019 12:09:39 File VBox.log copied
-11.03.2019 12:09:39 File VBox.log.1 copied
-11.03.2019 12:09:39 File VBox.log.2 copied
-11.03.2019 12:09:39 File VBox.log.3 copied
-11.03.2019 12:09:40 File VBoxHardening.log copied
-11.03.2019 12:09:40 Directory D:\WebServer 11.03.2019-12.08.19\SharedFolder created
-11.03.2019 12:09:40 Starting VM WebServer...
-11.03.2019 12:09:40 VM WebServer started.
-11.03.2019 12:09:40 There are 2 copies of this VM (must store 5), so nothing to delete.
+18.03.2019 9:25:52 Stopping VM WebServer...
+18.03.2019 9:26:02 VM WebServer stopped.
+18.03.2019 9:26:02 Directory D:\WebServer 18.03.2019-09.26.02 created
+18.03.2019 9:26:02 File XMPPServer.vbox copied
+18.03.2019 9:26:02 File XMPPServer.vbox-prev copied
+18.03.2019 9:27:23 File XMPPServer.vdi copied
+18.03.2019 9:27:23 Directory D:\WebServer 18.03.2019-09.26.02\Logs created
+18.03.2019 9:27:23 File VBox.log copied
+18.03.2019 9:27:23 File VBox.log.1 copied
+18.03.2019 9:27:23 File VBox.log.2 copied
+18.03.2019 9:27:23 File VBox.log.3 copied
+18.03.2019 9:27:23 File VBoxHardening.log copied
+18.03.2019 9:27:23 Directory D:\WebServer 18.03.2019-09.26.02\SharedFolder created
+18.03.2019 9:27:23 Starting VM WebServer...
+18.03.2019 9:27:23 VM WebServer started.
+18.03.2019 9:27:23 There are 4 copies of this VM (must store 5), so nothing to delete.
+----------------------------------------------------------------------
+18.03.2019 9:28:53 Stopping VM Mini Windows XP...
+18.03.2019 9:29:08 VM Mini Windows XP stopped.
+18.03.2019 9:29:08 Directory D:\Mini Windows XP 18.03.2019-09.29.08 created
+18.03.2019 9:29:08 File Mini Windows XP.vbox copied
+18.03.2019 9:29:08 File Mini Windows XP.vbox-prev copied
+18.03.2019 9:29:37 File MiniXP.vdi copied
+18.03.2019 9:29:37 Directory D:\Mini Windows XP 18.03.2019-09.29.08\Logs created
+18.03.2019 9:29:37 File VBox.log copied
+18.03.2019 9:29:37 File VBox.log.1 copied
+18.03.2019 9:29:37 File VBox.log.2 copied
+18.03.2019 9:29:37 File VBox.log.3 copied
+18.03.2019 9:29:37 File VBoxHardening.log copied
+18.03.2019 9:29:37 Directory D:\Mini Windows XP 18.03.2019-09.29.08\Shared created
+18.03.2019 9:29:38 File K-Meleon76 Pro RC+ ru.7z copied
+18.03.2019 9:29:38 Starting VM Mini Windows XP...
+18.03.2019 9:29:38 VM Mini Windows XP started.
+18.03.2019 9:29:38 There are 1 copies of this VM (must store 5), so nothing to delete.
+----------------------------------------------------------------------
+======================================================================
+-----------------------Backup sequence started------------------------
+======================================================================
+18.03.2019 9:37:59 Stopping VM XMPPServer...
+18.03.2019 9:38:09 VM XMPPServer stopped.
+18.03.2019 9:38:09 Directory D:\XMPPServer 18.03.2019-09.38.09 created
+18.03.2019 9:38:09 File XMPPServer.vbox copied
+18.03.2019 9:38:09 File XMPPServer.vbox-prev copied
+18.03.2019 9:39:30 File XMPPServer.vdi copied
+18.03.2019 9:39:30 Directory D:\XMPPServer 18.03.2019-09.38.09\Logs created
+18.03.2019 9:39:30 File VBox.log copied
+18.03.2019 9:39:30 File VBox.log.1 copied
+18.03.2019 9:39:30 File VBox.log.2 copied
+18.03.2019 9:39:30 File VBox.log.3 copied
+18.03.2019 9:39:30 File VBoxHardening.log copied
+18.03.2019 9:39:30 Directory D:\XMPPServer 18.03.2019-09.38.09\SharedFolder created
+18.03.2019 9:39:30 Starting VM XMPPServer...
+18.03.2019 9:39:30 VM XMPPServer started.
+18.03.2019 9:39:30 Deleting old copy D:\XMPPServer 11.03.2019-11.57.15
+----------------------------------------------------------------------
+18.03.2019 9:41:00 Stopping VM {80125583-fe48-44f4-8c7d-aea7b35587af}...
+18.03.2019 9:41:06 VM {80125583-fe48-44f4-8c7d-aea7b35587af} stopped.
+18.03.2019 9:41:06 Directory D:\{80125583-fe48-44f4-8c7d-aea7b35587af} 18.03.2019-09.41.06 created
+18.03.2019 9:41:06 File XMPPServer.vbox copied
+18.03.2019 9:41:06 File XMPPServer.vbox-prev copied
+18.03.2019 9:42:27 File XMPPServer.vdi copied
+18.03.2019 9:42:27 Directory D:\{80125583-fe48-44f4-8c7d-aea7b35587af} 18.03.2019-09.41.06\Logs created
+18.03.2019 9:42:27 File VBox.log copied
+18.03.2019 9:42:27 File VBox.log.1 copied
+18.03.2019 9:42:27 File VBox.log.2 copied
+18.03.2019 9:42:27 File VBox.log.3 copied
+18.03.2019 9:42:27 File VBoxHardening.log copied
+18.03.2019 9:42:27 Directory D:\{80125583-fe48-44f4-8c7d-aea7b35587af} 18.03.2019-09.41.06\SharedFolder created
+18.03.2019 9:42:27 Starting VM {80125583-fe48-44f4-8c7d-aea7b35587af}...
+18.03.2019 9:42:27 VM {80125583-fe48-44f4-8c7d-aea7b35587af} started.
+18.03.2019 9:42:27 There are 1 copies of this VM (must store 5), so nothing to delete.
+----------------------------------------------------------------------
+18.03.2019 9:43:57 Stopping VM Mini Windows XP...
+18.03.2019 9:44:52 VM Mini Windows XP stopped.
+18.03.2019 9:44:52 Directory D:\Mini Windows XP 18.03.2019-09.44.52 created
+18.03.2019 9:44:52 File Mini Windows XP.vbox copied
+18.03.2019 9:44:52 File Mini Windows XP.vbox-prev copied
+18.03.2019 9:45:20 File MiniXP.vdi copied
+18.03.2019 9:45:20 Directory D:\Mini Windows XP 18.03.2019-09.44.52\Logs created
+18.03.2019 9:45:20 File VBox.log copied
+18.03.2019 9:45:20 File VBox.log.1 copied
+18.03.2019 9:45:20 File VBox.log.2 copied
+18.03.2019 9:45:20 File VBox.log.3 copied
+18.03.2019 9:45:20 File VBoxHardening.log copied
+18.03.2019 9:45:20 Directory D:\Mini Windows XP 18.03.2019-09.44.52\Shared created
+18.03.2019 9:45:21 File K-Meleon76 Pro RC+ ru.7z copied
+18.03.2019 9:45:21 Starting VM Mini Windows XP...
+18.03.2019 9:45:21 VM Mini Windows XP started.
+18.03.2019 9:45:21 There are 2 copies of this VM (must store 5), so nothing to delete.
+----------------------------------------------------------------------

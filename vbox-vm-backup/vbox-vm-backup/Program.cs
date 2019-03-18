@@ -51,7 +51,7 @@ namespace vbox_vm_backup
 #if (!DEBUG)
             Process p = new Process();
             p.StartInfo.FileName= Path.Combine(VBoxPath, "VBoxManage.exe");
-            p.StartInfo.Arguments = "controlvm " + VMName + " acpipowerbutton";
+            p.StartInfo.Arguments = "controlvm " + "\"" + VMName + "\" acpipowerbutton";
             p.Start();
 #endif
         }
@@ -68,7 +68,7 @@ namespace vbox_vm_backup
 #if (!DEBUG)
             Process p = new Process();
             p.StartInfo.FileName = Path.Combine(VBoxPath, "VirtualBoxVM.exe");
-            p.StartInfo.Arguments = "--startvm " + VMName;
+            p.StartInfo.Arguments = "--startvm " + "\"" + VMName + "\"";
             p.Start();
 #endif
 
