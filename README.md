@@ -59,7 +59,7 @@ Example settings.xml included in release package and rather intuitive:
 </ArrayOfVMInfo>
 ```
 
-There are two example VMs - XMPPServer and WebServer (these are VM names in VirtualBox Control Panel).
+There are three example VMs - XMPPServer, WebServer and Mini Windows XP machine (these are VM names in VirtualBox Control Panel). You can also use VM UUID instead of name.
 
 So program copies files from `C:\Users\user\Desktop\VMs\XMPPServer` to `D:\XMPPServer_Date-Time`
 
@@ -70,3 +70,4 @@ Then goes for next VM - `C:\Users\user\Desktop\VMs\WebServer` to `D:\WebServer_D
 If there are more copies of this VM, then **NumberOfCopies**, oldest copies are deleted.
 
 **VBoxInstallPath** is a path to VirtualBox executables (VBoxManage.exe and VirtualBoxVM.exe).
+**CompressVDI** controls compression of VM disk images, set to 1 to yes, 0 to skip.
