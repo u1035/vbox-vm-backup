@@ -13,7 +13,7 @@ Current version - 0.2-alpha, [can be dowloaded here.](https://github.com/u1035/v
 
 ## How it works
 
-It sends shutdown signal to VM (emulating pressing ACPI power button), waits for it's correct shutdown, copies all VM files to specified folder and then starts VM back. Then waits some time for VM starts, and proceeding to the next VM.
+It sends shutdown signal to VM (emulating pressing ACPI power button), waits for it's correct shutdown, compresses *.vdi dynamic disk images if necessary, and copies all VM files to specified folder and then starts VM back. Then waits some time for VM starts, and proceeding to the next VM.
 Program processes virtual machines sequentally, one by one, to decrease overall downtime and disk load.
 
 This utility is designed to be started manually or by Windows Task Scheduler (you should make a task manually), makes a log file of it's work (**vbox-vm-backup.log** in program folder) and uses XML config file (**settings.xml** in program folder).
@@ -34,27 +34,27 @@ Example settings.xml included in release package and rather intuitive:
     <SourcePath>C:\Users\user\Desktop\VMs\XMPPServer\</SourcePath>
     <DestPath>D:\</DestPath>
     <NumberOfCopies>7</NumberOfCopies>
-	<WaitVMToStart>30000</WaitVMToStart>
-	<VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
-	<CompressVDI>1</CompressVDI>
+    <WaitVMToStart>30000</WaitVMToStart>
+    <VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
+    <CompressVDI>1</CompressVDI>
   </VMInfo>
   <VMInfo>
     <VMName>WebServer</VMName>
     <SourcePath>C:\Users\user\Desktop\VMs\WebServer\</SourcePath>
     <DestPath>D:\</DestPath>
     <NumberOfCopies>7</NumberOfCopies>
-	<WaitVMToStart>30000</WaitVMToStart>
-	<VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
-	<CompressVDI>1</CompressVDI>
+    <WaitVMToStart>30000</WaitVMToStart>
+    <VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
+    <CompressVDI>1</CompressVDI>
   </VMInfo>
     <VMInfo>
     <VMName>Mini Windows XP</VMName>
     <SourcePath>C:\Users\user\Desktop\VMs\Mini Windows XP</SourcePath>
     <DestPath>D:\</DestPath>
     <NumberOfCopies>7</NumberOfCopies>
-	<WaitVMToStart>30000</WaitVMToStart>
-	<VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
-	<CompressVDI>1</CompressVDI>
+    <WaitVMToStart>30000</WaitVMToStart>
+    <VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
+    <CompressVDI>1</CompressVDI>
   </VMInfo>
 </ArrayOfVMInfo>
 ```
