@@ -27,15 +27,9 @@ namespace vbox_vm_backup
             foreach (VMInfo vm in Targets)
             {
                 CopyVM(vm);
-#if (!DEBUG)
                 System.Threading.Thread.Sleep(vm.WaitVMToStart);
-#endif
                 logger.Log("----------------------------------------------------------------------", false);
             }
-
-#if (DEBUG)
-            Console.ReadKey();          
-#endif
 
         }
 
@@ -48,12 +42,12 @@ namespace vbox_vm_backup
         {
             logger.Log("Stopping VM " + VMName + "...", true, ConsoleColor.DarkRed );
 
-#if (!DEBUG)
             Process p = new Process();
             p.StartInfo.FileName= Path.Combine(VBoxPath, "VBoxManage.exe");
             p.StartInfo.Arguments = "controlvm " + "\"" + VMName + "\" acpipowerbutton";
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.UseShellExecute = false;
             p.Start();
-#endif
         }
 
         /// <summary>
@@ -65,12 +59,12 @@ namespace vbox_vm_backup
         {
             logger.Log("Starting VM " + VMName + "...");
 
-#if (!DEBUG)
             Process p = new Process();
             p.StartInfo.FileName = Path.Combine(VBoxPath, "VirtualBoxVM.exe");
             p.StartInfo.Arguments = "--startvm " + "\"" + VMName + "\"";
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.UseShellExecute = false;
             p.Start();
-#endif
 
             logger.Log("VM " + VMName + " started.", true, ConsoleColor.Green);
         }
@@ -78,18 +72,15 @@ namespace vbox_vm_backup
         /// <summary>
         /// Sends shutdown signal to VM, waits for it's correct shutdown, copies VM files, starts VM back
         /// </summary>
-        /// <param name="source">Copy VM files from this folder</param>
-        /// <param name="dest">Copy VM files to this folder</param>
-        /// <param name="VMName">VM name in VirtualBox</param>
-        /// <param name="VBoxPath">Path to VirtualBox executables</param>
+        /// <param name="VM">Virtual machine info</param>
         private static void CopyVM(VMInfo VM)
         {
             StopVM(VM.VMName, VM.VBoxInstallPath);      
             WaitForShutdown(VM.VMName);
 
-#if (!DEBUG)  
+            if (VM.CompressVDI) CompressVDI(VM);
+ 
             DirectoryCopy(VM.SourcePath, Path.Combine(VM.DestPath, VM.VMName + " " + DateTime.Now.ToString("dd.MM.yyyy-HH.mm.ss")));
-#endif
 
             StartVM(VM.VMName, VM.VBoxInstallPath);
 
@@ -143,7 +134,6 @@ namespace vbox_vm_backup
         /// <param name="VMName">Name of virtual machine</param>
         private static void WaitForShutdown(string VMName)
         {
-#if (!DEBUG) 
             bool running = false;
 
             do
@@ -162,7 +152,6 @@ namespace vbox_vm_backup
                 
 
             } while (running);
-#endif
 
             logger.Log("VM " + VMName + " stopped.");
         }
@@ -254,7 +243,33 @@ namespace vbox_vm_backup
                 }
             }
         }
+        
+        /// <summary>
+        /// Compressing all vdi disk images in VM folder
+        /// </summary>
+        /// <param name="VM">Virtual machine info</param>
+        private static void CompressVDI(VMInfo VM)
+        {
+            logger.Log("Trying to compress VDI image...", true);
 
+            //Getting all *.vdi
+            DirectoryInfo dir = new DirectoryInfo(VM.SourcePath);
+            FileInfo[] files = dir.GetFiles("*.vdi");
 
+            //Compressing each one
+            foreach (FileInfo file in files)
+            {
+                Process p = new Process();
+                p.StartInfo.FileName = Path.Combine(VM.VBoxInstallPath, "VBoxManage.exe");
+                p.StartInfo.Arguments = "modifyhd " + "\"" + file.FullName + "\" --compact";
+                p.StartInfo.CreateNoWindow = true;
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardError = true;
+                p.Start();
+                logger.Log(p.StandardError.ReadToEnd());
+                p.WaitForExit();
+            }
+
+        }
     }
 }

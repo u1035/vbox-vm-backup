@@ -4,16 +4,27 @@
     <VMName>XMPPServer</VMName>
     <SourcePath>C:\Users\u1035\Desktop\VMs\XMPPServer\</SourcePath>
     <DestPath>D:\</DestPath>
-    <NumberOfCopies>7</NumberOfCopies>
-	<WaitVMToStart>90000</WaitVMToStart>
+    <NumberOfCopies>3</NumberOfCopies>
+	<WaitVMToStart>30000</WaitVMToStart>
 	<VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
+	<CompressVDI>1</CompressVDI>
   </VMInfo>
   <VMInfo>
     <VMName>WebServer</VMName>
-    <SourcePath>C:\Users\u1035\Desktop\VMs\XMPPServer\</SourcePath>
+    <SourcePath>C:\Users\u1035\Desktop\VMs\WebServer\</SourcePath>
     <DestPath>D:\</DestPath>
-    <NumberOfCopies>7</NumberOfCopies>
-	<WaitVMToStart>90000</WaitVMToStart>
+    <NumberOfCopies>3</NumberOfCopies>
+	<WaitVMToStart>30000</WaitVMToStart>
 	<VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
+	<CompressVDI>1</CompressVDI>
+  </VMInfo>
+    <VMInfo>
+    <VMName>Mini Windows XP</VMName>
+    <SourcePath>C:\Users\u1035\Desktop\VMs\Mini Windows XP</SourcePath>
+    <DestPath>D:\</DestPath>
+    <NumberOfCopies>3</NumberOfCopies>
+	<WaitVMToStart>30000</WaitVMToStart>
+	<VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
+	<CompressVDI>1</CompressVDI>
   </VMInfo>
 </ArrayOfVMInfo>

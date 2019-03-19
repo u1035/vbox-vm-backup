@@ -8,4 +8,3 @@ C:\Users\u1035\Desktop\Dev\vbox-vm-backup\vbox-vm-backup\vbox-vm-backup\bin\Rele
 C:\Users\u1035\Desktop\Dev\vbox-vm-backup\vbox-vm-backup\vbox-vm-backup\bin\Release\vbox-vm-backup.pdb
 C:\Users\u1035\Desktop\Dev\vbox-vm-backup\vbox-vm-backup\vbox-vm-backup\obj\Release\vbox-vm-backup.exe
 C:\Users\u1035\Desktop\Dev\vbox-vm-backup\vbox-vm-backup\vbox-vm-backup\obj\Release\vbox-vm-backup.pdb
-C:\Users\u1035\Desktop\Dev\vbox-vm-backup\vbox-vm-backup\vbox-vm-backup\obj\Release\vbox-vm-backup.csprojResolveAssemblyReference.cache

@@ -11,18 +11,20 @@ namespace vbox_vm_backup
         public string VBoxInstallPath { get; set; }             //Path to VirtualBox executable files
         public int NumberOfCopies { get; set; }                 //Store last n copies
         public int WaitVMToStart { get; set; }                  //Time to wait before next VM backup (milliseconds)
+        public bool CompressVDI { get; set; }                   //Allows to shrink vdi disk image size
 
         public VMInfo()  
         { }
 
-        public VMInfo(string Name, string Src, string Dest, int Copies, int Wait, string VBoxPath)
+        public VMInfo(string Name, string Src, string Dest, int Copies, int Wait, string VBoxPath, bool compress)
         {
             VMName = Name;
             SourcePath = Src;
             DestPath = Dest;
             NumberOfCopies = Copies;
             WaitVMToStart = Wait;
-            VBoxInstallPath = VBoxPath; 
+            VBoxInstallPath = VBoxPath;
+            CompressVDI = compress;
         }
     }
 }
