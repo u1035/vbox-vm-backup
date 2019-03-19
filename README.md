@@ -9,7 +9,7 @@ Windows, .NET Framework 4.5
 
 ## Download
 
-Current version - 0.1.1-alpha, [can be dowloaded here.](https://github.com/u1035/vbox-vm-backup/releases/tag/0.1.1-alpha) Be careful - may contain bugs)
+Current version - 0.2-alpha, [can be dowloaded here.](https://github.com/u1035/vbox-vm-backup/releases/tag/0.2-alpha) Be careful - may contain bugs)
 
 ## How it works
 
@@ -34,16 +34,27 @@ Example settings.xml included in release package and rather intuitive:
     <SourcePath>C:\Users\user\Desktop\VMs\XMPPServer\</SourcePath>
     <DestPath>D:\</DestPath>
     <NumberOfCopies>7</NumberOfCopies>
-    <WaitVMToStart>90000</WaitVMToStart>
-    <VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
+	<WaitVMToStart>30000</WaitVMToStart>
+	<VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
+	<CompressVDI>1</CompressVDI>
   </VMInfo>
   <VMInfo>
     <VMName>WebServer</VMName>
     <SourcePath>C:\Users\user\Desktop\VMs\WebServer\</SourcePath>
     <DestPath>D:\</DestPath>
     <NumberOfCopies>7</NumberOfCopies>
-    <WaitVMToStart>90000</WaitVMToStart>
-    <VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
+	<WaitVMToStart>30000</WaitVMToStart>
+	<VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
+	<CompressVDI>1</CompressVDI>
+  </VMInfo>
+    <VMInfo>
+    <VMName>Mini Windows XP</VMName>
+    <SourcePath>C:\Users\user\Desktop\VMs\Mini Windows XP</SourcePath>
+    <DestPath>D:\</DestPath>
+    <NumberOfCopies>7</NumberOfCopies>
+	<WaitVMToStart>30000</WaitVMToStart>
+	<VBoxInstallPath>C:\Program Files\Oracle\VirtualBox\</VBoxInstallPath>
+	<CompressVDI>1</CompressVDI>
   </VMInfo>
 </ArrayOfVMInfo>
 ```
